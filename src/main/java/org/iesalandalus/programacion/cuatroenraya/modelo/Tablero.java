@@ -18,4 +18,20 @@ public class Tablero {
 			}
 		}
 	}
+
+	private boolean columnaVacia(int columna) {
+
+		boolean estaVacioColumna = false;
+
+		if (casillas[0][columna].getFicha() == null) {
+
+			estaVacioColumna = true;
+
+		} else {
+
+			estaVacioColumna = false;
+		}
+
+		return estaVacioColumna;
+	}
 }
