@@ -43,4 +43,21 @@ public class Casilla {
 
 		return estaOcupadaCasilla;
 	}
+
+	@Override
+	public String toString() {
+
+		if (ficha == null) {
+
+			return String.format("%s", " ");
+
+		} else if (ficha.equals(Ficha.AZUL)) {
+
+			return String.format("%s", "A");
+
+		} else {
+
+			return String.format("%s", "V");
+		}
+	}
 }
