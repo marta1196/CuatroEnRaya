@@ -34,4 +34,10 @@ public class Jugador {
 		}
 		this.nombre = nombre;
 	}
+
+	@Override
+	public String toString() {
+
+		return String.format("%s (%s)", nombre, colorFichas);
+	}
 }
