@@ -5,6 +5,12 @@ public class Jugador {
 	private Ficha colorFichas;
 	private String nombre;
 
+	public Jugador(String nombre, Ficha colorFicha) {
+
+		setNombre(nombre);
+		setColorFichas(colorFicha);
+	}
+
 	public Ficha getColorFichas() {
 		return colorFichas;
 	}
