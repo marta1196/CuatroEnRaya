@@ -6,6 +6,11 @@ public class Casilla {
 
 	private Ficha ficha;
 
+	public Casilla() {
+
+		this.ficha = null;
+	}
+
 	public Ficha getFicha() {
 
 		return ficha;
