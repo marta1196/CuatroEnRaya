@@ -83,4 +83,29 @@ public class Consola {
 		return primerJugador;
 
 	}
+
+	public static Jugador leerJugador(Ficha colorFicha) {
+
+		String nombreSegundoJugador;
+		Jugador segundoJugador = null;
+		boolean jugadorCorrecto = false;
+
+		do {
+			try {
+
+				System.out.println("Introduce los datos del SEGUNDO jugador");
+				nombreSegundoJugador = leerNombre();
+				segundoJugador = new Jugador(nombreSegundoJugador, colorFicha);
+				jugadorCorrecto = true;
+
+			} catch (Exception e) {
+
+				System.out.println(e.getMessage());
+			}
+
+		} while (!jugadorCorrecto);
+
+		return segundoJugador;
+
+	}
 }
