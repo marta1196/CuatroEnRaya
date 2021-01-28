@@ -24,6 +24,32 @@ public class CuatroEnRaya {
 
 	}
 	
+	public void jugar() {
+
+		boolean haGanado = false;
+
+		while (!tablero.estaLleno() && !haGanado) {
+
+			for (int i = 0; i < NUMERO_JUGADORES; i++) {
+
+				haGanado = tirar(jugadores[i]);
+				System.out.println(tablero.toString());
+
+				if (haGanado) {
+
+					System.out.println("ENHORABUENA, " + jugadores[i].getNombre() + " has ganado!!!");
+					break;
+
+				} else if (tablero.estaLleno()) {
+
+					System.out.println("Empate, el tablero está lleno");
+					break;
+				}
+			}
+		}
+
+	}
+
 	private boolean tirar(Jugador jugador) {
 
 		boolean haGanado = false;
