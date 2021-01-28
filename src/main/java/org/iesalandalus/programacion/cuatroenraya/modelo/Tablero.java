@@ -171,6 +171,34 @@ public class Tablero {
 		return haGanado;
 	}
 
+	private boolean comprobarDiagonalNE(int fila, int columna, Ficha ficha) {
+
+		int desplazamientoInicial = menor(fila, columna);
+		int fichasConsecutivas = 0;
+		int filaInicial = fila - desplazamientoInicial;
+		int columnaInicial = columna - desplazamientoInicial;
+		boolean haGanado = false;
+
+		for (int i = filaInicial, j = columnaInicial; i < FILAS && j < COLUMNAS; i++, j++) {
+
+			if (casillas[i][j].estaOcupada() && casillas[i][j].getFicha().equals(ficha)) {
+
+				fichasConsecutivas++;
+				
+			} else {
+
+				fichasConsecutivas = 0;
+			}
+			
+			if (objetivoAlcanzado(fichasConsecutivas)) {
+
+				haGanado = true;
+			}
+		}
+
+		return haGanado;
+	}
+
 	private int menor(int numeroUno, int numeroDos) {
 
 		int numeroMenor;
