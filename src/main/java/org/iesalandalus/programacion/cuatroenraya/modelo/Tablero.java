@@ -146,4 +146,28 @@ public class Tablero {
 
 		return haGanado;
 	}
+
+	private boolean comprobarVertical(int columna, Ficha ficha) {
+
+		int fichasConsecutivas = 0;
+		boolean haGanado = false;
+
+		for (int i = 0; i < FILAS; i++) {
+
+			if (casillas[i][columna].estaOcupada() && casillas[i][columna].getFicha().equals(ficha)) {
+
+				fichasConsecutivas++;
+				
+			} else {
+
+				fichasConsecutivas = 0;
+			}
+			if (objetivoAlcanzado(fichasConsecutivas)) {
+
+				haGanado = true;
+			}
+		}
+
+		return haGanado;
+	}
 }
