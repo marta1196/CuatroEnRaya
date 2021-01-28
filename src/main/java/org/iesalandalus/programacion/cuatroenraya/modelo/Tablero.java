@@ -87,4 +87,12 @@ public class Tablero {
 			throw new NullPointerException("ERROR: La ficha no puede ser nula.");
 		}
 	}
+
+	private void comprobarColumna(int columna) {
+
+		if (columna < 0 || columna >= COLUMNAS) {
+
+			throw new IllegalArgumentException("ERROR: Columna incorrecta.");
+		}
+	}
 }
