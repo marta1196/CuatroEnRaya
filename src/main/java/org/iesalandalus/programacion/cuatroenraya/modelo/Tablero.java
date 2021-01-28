@@ -50,6 +50,21 @@ public class Tablero {
 		return estaVacioColumna;
 	}
 
+	public boolean estaLleno() {
+
+		boolean estaLlenoTablero = true;
+
+		for (int j = 0; j < COLUMNAS; j++) {
+
+			if (!columnaLlena(j)) {
+
+				estaLlenoTablero = false;
+			}
+		}
+
+		return estaLlenoTablero;
+	}
+
 	private boolean columnaLlena(int columna) {
 
 		boolean estaLlenaColumna = false;
