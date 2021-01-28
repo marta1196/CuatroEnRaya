@@ -1,6 +1,7 @@
 package org.iesalandalus.programacion.cuatroenraya.vista;
 
 import org.iesalandalus.programacion.cuatroenraya.modelo.Ficha;
+import org.iesalandalus.programacion.cuatroenraya.modelo.Jugador;
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class Consola {
@@ -54,5 +55,32 @@ public class Consola {
 		} while (opcionColor != 0 && opcionColor != 1);
 
 		return colorFicha;
+	}
+
+	public static Jugador leerJugador() {
+
+		String nombrePrimerJugador;
+		Ficha colorFicha;
+		Jugador primerJugador = null;
+		boolean jugadorCorrecto = false;
+
+		do {
+			try {
+
+				System.out.println("Introduce los datos del PRIMER jugador");
+				nombrePrimerJugador = leerNombre();
+				colorFicha = elegirColorFichas();
+				primerJugador = new Jugador(nombrePrimerJugador, colorFicha);
+				jugadorCorrecto = true;
+
+			} catch (Exception e) {
+
+				System.out.println(e.getMessage());
+			}
+
+		} while (!jugadorCorrecto);
+		
+		return primerJugador;
+
 	}
 }
