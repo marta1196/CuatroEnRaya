@@ -95,4 +95,20 @@ public class Tablero {
 			throw new IllegalArgumentException("ERROR: Columna incorrecta.");
 		}
 	}
+
+	private int getPrimeraFilaVacia(int columna) {
+
+		int casillaVacia = 0;
+
+		for (int i = 0; i < FILAS; i++) {
+
+			if (casillas[i][columna].getFicha() == null) {
+
+				casillaVacia = i;
+				break;
+			}
+		}
+
+		return casillaVacia;
+	}
 }
