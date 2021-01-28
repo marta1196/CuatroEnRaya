@@ -277,4 +277,33 @@ public class Tablero {
 
 		return numeroMenor;
 	}
+
+	public String toString() {
+
+		StringBuilder cadena = new StringBuilder();
+
+		for (int i = FILAS - 1; i >= 0; i--) {
+
+			cadena.append("|");
+
+			for (int j = 0; j < COLUMNAS; j++) {
+
+				cadena.append(casillas[i][j].toString());
+			}
+			
+			cadena.append("|");
+			cadena.append("\n");
+		}
+
+		cadena.append(" ");
+
+		for (int j = 0; j < COLUMNAS; j++) {
+
+			cadena.append("-");
+		}
+
+		cadena.append("\n");
+
+		return cadena.toString();
+	}
 }
