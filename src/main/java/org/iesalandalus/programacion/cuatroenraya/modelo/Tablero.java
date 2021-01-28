@@ -111,7 +111,20 @@ public class Tablero {
 
 		return casillaVacia;
 	}
+	
+	private boolean comprobarTirada(int fila, int columna, Ficha ficha) {
 
+		boolean tiradaGanadora = false;
+		
+		if (comprobarHorizontal(fila, ficha) || comprobarVertical(columna, ficha)
+				|| comprobarDiagonalNE(fila, columna, ficha) || comprobarDiagonalNO(fila, columna, ficha)) {
+
+			tiradaGanadora = true;
+		}
+
+		return tiradaGanadora;
+	}
+	
 	private boolean objetivoAlcanzado(int fichasConsecutivas) {
 
 		boolean haGanado = false;
@@ -199,7 +212,7 @@ public class Tablero {
 		return haGanado;
 	}
 
-	private boolean comrpobarDiagonalNO(int fila, int columna, Ficha ficha) {
+	private boolean comprobarDiagonalNO(int fila, int columna, Ficha ficha) {
 
 		int desplazamientoInicial = menor(fila, COLUMNAS - 1 - columna);
 		int fichasConsecutivas = 0;
