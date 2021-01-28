@@ -80,4 +80,11 @@ public class Tablero {
 
 		return estaLlenaColumna;
 	}
+
+	private void comprobarFicha(Ficha ficha) {
+
+		if (ficha == null) {
+			throw new NullPointerException("ERROR: La ficha no puede ser nula.");
+		}
+	}
 }
