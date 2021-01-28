@@ -111,4 +111,16 @@ public class Tablero {
 
 		return casillaVacia;
 	}
+
+	private boolean objetivoAlcanzado(int fichasConsecutivas) {
+
+		boolean haGanado = false;
+
+		if (fichasConsecutivas == FICHAS_IGUALES_CONSECUTIVAS_NECESARIAS) {
+
+			haGanado = true;
+		}
+
+		return haGanado;
+	}
 }
