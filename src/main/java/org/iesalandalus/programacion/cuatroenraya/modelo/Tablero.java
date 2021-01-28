@@ -19,6 +19,21 @@ public class Tablero {
 		}
 	}
 
+	public boolean estaVacio() {
+
+		boolean estaVaciaTablero = true;
+
+		for (int j = 0; j < COLUMNAS; j++) {
+
+			if (!columnaVacia(j)) {
+
+				estaVaciaTablero = false;
+			}
+		}
+
+		return estaVaciaTablero;
+	}
+
 	private boolean columnaVacia(int columna) {
 
 		boolean estaVacioColumna = false;
