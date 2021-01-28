@@ -2,6 +2,7 @@ package org.iesalandalus.programacion.cuatroenraya;
 
 import org.iesalandalus.programacion.cuatroenraya.modelo.Jugador;
 import org.iesalandalus.programacion.cuatroenraya.modelo.Tablero;
+import org.iesalandalus.programacion.cuatroenraya.vista.Consola;
 
 public class CuatroEnRaya {
 
@@ -21,5 +22,23 @@ public class CuatroEnRaya {
 		jugadores[0] = primerJugador;
 		jugadores[1] = segundoJugador;
 
+	}
+	
+	private boolean tirar(Jugador jugador) {
+
+		boolean haGanado = false;
+
+		int columna = Consola.leerColumna(jugador);
+
+		try {
+
+			haGanado = tablero.introducirFicha(columna, jugador.getColorFichas());
+
+		} catch (Exception e) {
+
+			System.out.println(e.getMessage());
+		}
+
+		return haGanado;
 	}
 }
