@@ -123,4 +123,27 @@ public class Tablero {
 
 		return haGanado;
 	}
+
+	private boolean comprobarHorizontal(int fila, Ficha ficha) {
+
+		int fichasConsecutivas = 0;
+		boolean haGanado = false;
+
+		for (int j = 0; j < COLUMNAS; j++) {
+
+			if (casillas[fila][j].estaOcupada() && casillas[fila][j].getFicha().equals(ficha)) {
+
+				fichasConsecutivas++;
+			} else {
+
+				fichasConsecutivas = 0;
+			}
+			if (objetivoAlcanzado(fichasConsecutivas)) {
+
+				haGanado = true;
+			}
+		}
+
+		return haGanado;
+	}
 }
