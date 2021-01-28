@@ -170,4 +170,20 @@ public class Tablero {
 
 		return haGanado;
 	}
+
+	private int menor(int numeroUno, int numeroDos) {
+
+		int numeroMenor;
+
+		if (numeroUno >= numeroDos) {
+
+			numeroMenor = numeroDos;
+
+		} else {
+
+			numeroMenor = numeroUno;
+		}
+
+		return numeroMenor;
+	}
 }
