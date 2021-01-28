@@ -108,4 +108,19 @@ public class Consola {
 		return segundoJugador;
 
 	}
+
+	public static int leerColumna(Jugador jugador) {
+
+		int numeroColumna = 0;
+		
+		do {
+
+			System.out.print(jugador.getNombre() + ", introduce la columna en la que deseas introducir la ficha (0 - 6): ");
+			numeroColumna = Entrada.entero();
+
+		} while (numeroColumna < 0 || numeroColumna > 6);
+
+		return numeroColumna;
+
+	}
 }
