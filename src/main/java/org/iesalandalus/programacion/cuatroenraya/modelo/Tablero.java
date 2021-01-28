@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.cuatroenraya.modelo;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Tablero {
 
 	public static final int FILAS = 6;
@@ -79,6 +81,26 @@ public class Tablero {
 		}
 
 		return estaLlenaColumna;
+	}
+	
+	public boolean introducirFicha(int columna, Ficha ficha) throws OperationNotSupportedException {
+
+		comprobarFicha(ficha);
+		comprobarColumna(columna);
+		boolean fichaIntroducida = false;
+
+		if (columnaLlena(columna)) {
+
+			throw new OperationNotSupportedException("ERROR: Columna llena.");
+
+		} else {
+
+			int filaVacia = getPrimeraFilaVacia(columna);
+			casillas[filaVacia][columna].setFicha(ficha);
+			fichaIntroducida = comprobarTirada(filaVacia, columna, ficha);
+		}
+
+		return fichaIntroducida;
 	}
 
 	private void comprobarFicha(Ficha ficha) {
