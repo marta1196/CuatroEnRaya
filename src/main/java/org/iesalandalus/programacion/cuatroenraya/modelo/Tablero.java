@@ -49,4 +49,20 @@ public class Tablero {
 
 		return estaVacioColumna;
 	}
+
+	private boolean columnaLlena(int columna) {
+
+		boolean estaLlenaColumna = false;
+
+		if (casillas[FILAS - 1][columna].getFicha() == null) {
+
+			estaLlenaColumna = false;
+
+		} else {
+
+			estaLlenaColumna = true;
+		}
+
+		return estaLlenaColumna;
+	}
 }
